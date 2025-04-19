@@ -1,0 +1,16 @@
+langchain>=0.1.6
+langchain-community>=0.0.19
+langchain-core>=0.1.28
+langchain-text-splitters>=0.0.1
+langchain-huggingface>=0.0.1
+python-dotenv==1.0.0
+huggingface-hub>=0.23.0
+faiss-cpu==1.7.4
+sentence-transformers>=2.2.2
+
+
+
+chat memory ka jugad karna hai
+rag horaha hai ya llm only?
+fastapi karna hai 
+integration karna hai
