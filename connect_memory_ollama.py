@@ -1,4 +1,5 @@
 import os
+import time
 from langchain_community.llms import Ollama
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.prompts import PromptTemplate
@@ -12,16 +13,31 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 # Configuration constants
-OLLAMA_MODEL = "llama3:8b"  # You can change this to any model you have in Ollama
+OLLAMA_MODEL = "qwen2.5:1.5b"  # Using a stable model
 DB_FAISS_PATH = "vectorstore/deb_faiss"
 
-def load_llm(model_name):
-    """Initialize and return the Ollama LLM."""
-    llm = Ollama(
-        model=model_name,
-        temperature=0.5,
-    )
-    return llm
+def load_llm(model_name, max_retries=3):
+    """Initialize and return the Ollama LLM with retry logic."""
+    for attempt in range(max_retries):
+        try:
+            llm = Ollama(
+                model=model_name,
+                temperature=0.7,
+            )
+            # Test the connection with a simple prompt
+            llm("test")
+            return llm
+        except Exception as e:
+            if attempt < max_retries - 1:
+                print(f"Attempt {attempt + 1} failed: {str(e)}. Retrying in 5 seconds...")
+                time.sleep(5)
+                # Restart Ollama service
+                os.system("ollama stop > /dev/null 2>&1")
+                time.sleep(2)
+                os.system("ollama serve > /dev/null 2>&1 &")
+                time.sleep(3)
+            else:
+                raise Exception(f"Failed to initialize LLM after {max_retries} attempts: {str(e)}")
 
 CUSTOM_PROMPT_TEMPLATE ="""
 Use the provided context and chat history to answer the user's question with empathy, clarity, and accuracy. Prioritize these steps:

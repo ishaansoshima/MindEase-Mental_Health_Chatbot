@@ -5,12 +5,14 @@ langchain-text-splitters>=0.0.1
 langchain-huggingface>=0.0.1
 python-dotenv==1.0.0
 huggingface-hub>=0.23.0
-faiss-cpu==1.7.4
+faiss-cpu==1.6.3  # Using a version that's known to work
 sentence-transformers>=2.2.2
-
-
-
-chat memory ka jugad karna hai
-rag horaha hai ya llm only?
-fastapi karna hai 
-integration karna hai
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.4.2
+python-multipart>=0.0.6
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-socketio>=5.10.0
+python-engineio>=4.7.1
+aiohttp>=3.9.0

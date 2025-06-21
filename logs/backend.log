@@ -1,0 +1,421 @@
+INFO:     Started server process [13111]
+INFO:     Waiting for application startup.
+/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/main.py:60: LangChainDeprecationWarning: Please see the migration guide at: https://python.langchain.com/docs/versions/migrating_memory/
+  memory = ConversationBufferMemory(
+/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/connect_memory_ollama.py:23: LangChainDeprecationWarning: The class `Ollama` was deprecated in LangChain 0.3.1 and will be removed in 1.0.0. An updated version of the class exists in the :class:`~langchain-ollama package and should be used instead. To use it run `pip install -U :class:`~langchain-ollama` and import as `from :class:`~langchain_ollama import OllamaLLM``.
+  llm = Ollama(
+/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/connect_memory_ollama.py:28: LangChainDeprecationWarning: The method `BaseLLM.__call__` was deprecated in langchain-core 0.1.7 and will be removed in 1.0. Use :meth:`~invoke` instead.
+  llm("test")
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+QA Chain initialized successfully
+INFO:     127.0.0.1:65206 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65206 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65277 - "OPTIONS /api/chat HTTP/1.1" 200 OK
+/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/main.py:109: LangChainDeprecationWarning: The method `Chain.__call__` was deprecated in langchain 0.1.0 and will be removed in 1.0. Use :meth:`~invoke` instead.
+  response = qa_chain({"question": chat_request.message, "chat_history": model_chat_history})
+INFO:     127.0.0.1:65277 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65392 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49347 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49347 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50780 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50780 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50792 - "OPTIONS /api/chat HTTP/1.1" 200 OK
+Traceback (most recent call last):
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+        self, f"Failed to establish a new connection: {e}"
+    ) from e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x1714a9810>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1714a9810>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/main.py", line 109, in chat
+    response = qa_chain({"question": chat_request.message, "chat_history": model_chat_history})
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/_api/deprecation.py", line 191, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 386, in __call__
+    return self.invoke(
+           ~~~~~~~~~~~^
+        inputs,
+        ^^^^^^^
+    ...<2 lines>...
+        include_run_info=include_run_info,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 167, in invoke
+    raise e
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 157, in invoke
+    self._call(inputs, run_manager=run_manager)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/conversational_retrieval/base.py", line 150, in _call
+    new_question = self.question_generator.run(
+        question=question, chat_history=chat_history_str, callbacks=callbacks
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/_api/deprecation.py", line 191, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 608, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/_api/deprecation.py", line 191, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 386, in __call__
+    return self.invoke(
+           ~~~~~~~~~~~^
+        inputs,
+        ^^^^^^^
+    ...<2 lines>...
+        include_run_info=include_run_info,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 167, in invoke
+    raise e
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 157, in invoke
+    self._call(inputs, run_manager=run_manager)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/llm.py", line 127, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/llm.py", line 139, in generate
+    return self.llm.generate_prompt(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        prompts,
+        ^^^^^^^^
+    ...<2 lines>...
+        **self.llm_kwargs,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/language_models/llms.py", line 764, in generate_prompt
+    return self.generate(prompt_strings, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/language_models/llms.py", line 971, in generate
+    return self._generate_helper(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        prompts,
+        ^^^^^^^^
+    ...<3 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/language_models/llms.py", line 790, in _generate_helper
+    self._generate(
+    ~~~~~~~~~~~~~~^
+        prompts,
+        ^^^^^^^^
+    ...<3 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_community/llms/ollama.py", line 437, in _generate
+    final_chunk = super()._stream_with_aggregation(
+        prompt,
+    ...<4 lines>...
+        **kwargs,
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_community/llms/ollama.py", line 349, in _stream_with_aggregation
+    for stream_resp in self._create_generate_stream(prompt, stop, **kwargs):
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_community/llms/ollama.py", line 194, in _create_generate_stream
+    yield from self._create_stream(
+               ~~~~~~~~~~~~~~~~~~~^
+        payload=payload,
+        ^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_community/llms/ollama.py", line 252, in _create_stream
+    response = requests.post(
+        url=api_url,
+    ...<7 lines>...
+        timeout=self.timeout,
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1714a9810>: Failed to establish a new connection: [Errno 61] Connection refused'))
+INFO:     127.0.0.1:50792 - "POST /api/chat HTTP/1.1" 500 Internal Server Error
+Traceback (most recent call last):
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+        self, f"Failed to establish a new connection: {e}"
+    ) from e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x172bb56d0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x172bb56d0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/main.py", line 109, in chat
+    response = qa_chain({"question": chat_request.message, "chat_history": model_chat_history})
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/_api/deprecation.py", line 191, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 386, in __call__
+    return self.invoke(
+           ~~~~~~~~~~~^
+        inputs,
+        ^^^^^^^
+    ...<2 lines>...
+        include_run_info=include_run_info,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 167, in invoke
+    raise e
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 157, in invoke
+    self._call(inputs, run_manager=run_manager)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/conversational_retrieval/base.py", line 150, in _call
+    new_question = self.question_generator.run(
+        question=question, chat_history=chat_history_str, callbacks=callbacks
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/_api/deprecation.py", line 191, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 608, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/_api/deprecation.py", line 191, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 386, in __call__
+    return self.invoke(
+           ~~~~~~~~~~~^
+        inputs,
+        ^^^^^^^
+    ...<2 lines>...
+        include_run_info=include_run_info,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 167, in invoke
+    raise e
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/base.py", line 157, in invoke
+    self._call(inputs, run_manager=run_manager)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/llm.py", line 127, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain/chains/llm.py", line 139, in generate
+    return self.llm.generate_prompt(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        prompts,
+        ^^^^^^^^
+    ...<2 lines>...
+        **self.llm_kwargs,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/language_models/llms.py", line 764, in generate_prompt
+    return self.generate(prompt_strings, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/language_models/llms.py", line 971, in generate
+    return self._generate_helper(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        prompts,
+        ^^^^^^^^
+    ...<3 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_core/language_models/llms.py", line 790, in _generate_helper
+    self._generate(
+    ~~~~~~~~~~~~~~^
+        prompts,
+        ^^^^^^^^
+    ...<3 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_community/llms/ollama.py", line 437, in _generate
+    final_chunk = super()._stream_with_aggregation(
+        prompt,
+    ...<4 lines>...
+        **kwargs,
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_community/llms/ollama.py", line 349, in _stream_with_aggregation
+    for stream_resp in self._create_generate_stream(prompt, stop, **kwargs):
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_community/llms/ollama.py", line 194, in _create_generate_stream
+    yield from self._create_stream(
+               ~~~~~~~~~~~~~~~~~~~^
+        payload=payload,
+        ^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/langchain_community/llms/ollama.py", line 252, in _create_stream
+    response = requests.post(
+        url=api_url,
+    ...<7 lines>...
+        timeout=self.timeout,
+    )
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/ishaan/Documents/SMIT/developer/mini-project2/MindEase-Mental_Health_Chatbot/myenv/lib/python3.13/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x172bb56d0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+INFO:     127.0.0.1:50794 - "POST /api/chat HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:51114 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51114 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51114 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51162 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51369 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51369 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51640 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51640 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52199 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52199 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54729 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54729 - "GET / HTTP/1.1" 200 OK
